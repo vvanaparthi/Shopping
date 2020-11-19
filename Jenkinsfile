@@ -1,7 +1,7 @@
 pipeline {
   agent {
-   // label 'katalon'
-  }
+      docker { image 'node:latest' }
+    }
 
 
 
