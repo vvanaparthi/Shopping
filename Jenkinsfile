@@ -29,11 +29,11 @@ pipeline {
 					"""
       }
     }
-    stage('Run Groovy') {
+    /* stage('Run Groovy') {
         steps {
             bat "${groovy_home}/bin/groovy <script.name>"
         }
-    }
+    } */
     stage('Build Dev') {
       steps {
         print "Removing dist directory if one exist."
