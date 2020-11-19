@@ -6,7 +6,7 @@ pipeline {
 
 
   tools {
-    nodejs 'NodeJS 14.15.1'
+    nodejs 'node'
   }
   environment {
     PROJECT_NAME = 'my-angular-app'
