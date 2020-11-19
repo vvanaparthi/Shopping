@@ -1,0 +1,50 @@
+pipeline {
+  agent {
+    label 'katalon'
+  }
+
+
+
+  tools {
+    nodejs 'NodeJS 12'
+  }
+
+  environment {
+    PROJECT_NAME = 'my-angular-app'
+    //GIT_COMMIT_SHORT = "${env.GIT_COMMIT.take(8)}"
+   // ZIP_FILE_NAME = ''
+   // ARTIFACTORY_BASE_URL = "https://ci.dts.utah.gov/artifactory/dts-npm-local/dts-bp-ui/"
+  }
+
+  stages {
+    stage('Environment') {
+      steps {
+        echo('Echoing Environment...')
+
+        bat """
+					 npm install @angular/cli
+					 npm update
+
+					 npm i --save node-sass
+					 print PROJECT_NAME ${PROJECT_NAME}
+					 npm -version
+					"""
+      }
+    }
+    stage('Build Dev') {
+      steps {
+        print "Removing dist directory if one exist."
+
+        bat """
+          dir
+          if exist "dist\\" rd /q /s dist
+          dir
+        """
+       // bat 'npm install'
+        bat 'npm run build'
+      }
+
+    }
+
+  }
+ }
