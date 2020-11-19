@@ -8,7 +8,7 @@ pipeline {
   }
   environment {
     PROJECT_NAME = 'my-angular-app'
-    GROOVY_HOME = tool name: 'Groovy-2.4.9', type: 'hudson.plugins.groovy.GroovyInstallation'
+    //GROOVY_HOME = tool name: 'Groovy-2.4.9', type: 'hudson.plugins.groovy.GroovyInstallation'
     //GIT_COMMIT_SHORT = "${env.GIT_COMMIT.take(8)}"
    // ZIP_FILE_NAME = ''
    // ARTIFACTORY_BASE_URL = "https://ci.dts.utah.gov/artifactory/dts-npm-local/dts-bp-ui/"
